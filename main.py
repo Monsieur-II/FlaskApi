@@ -34,7 +34,7 @@ resource_fields = {
     'views': fields.Integer,
     'likes': fields.Integer
 }
-
+videos = {}
 
 class Video(Resource):
     @marshal_with(resource_fields)
@@ -72,7 +72,7 @@ class Video(Resource):
 
         db.session.commit()
 
-        return result
+        return result, 200
 
 
     def delete(self, video_id):
